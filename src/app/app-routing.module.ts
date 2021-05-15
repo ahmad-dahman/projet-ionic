@@ -11,6 +11,26 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'appareils',
+    loadChildren: () => import('./appareils/appareils.module').then( m => m.AppareilsPageModule)
+  },
+  {
+    path: 'single-appareil/:id',
+    loadChildren: () => import('./single-appareil/single-appareil.module').then( m => m.SingleAppareilPageModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'options',
+    loadChildren: () => import('./options/options.module').then( m => m.OptionsPageModule)
+  },
 ];
 
 @NgModule({
